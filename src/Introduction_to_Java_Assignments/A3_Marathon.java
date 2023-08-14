@@ -3,8 +3,8 @@ package Introduction_to_Java_Assignments;
 public class A3_Marathon {
 	
 	public static int bestRunner(int[] times) {
-		int best_time = times[0];
-		int best_index = 0;
+		int best_time = Integer.MAX_VALUE;
+		int best_index = -1;
 		
 		for(int i = 0; i < times.length; i++) {
 			if(times[i] < best_time) {
@@ -18,13 +18,16 @@ public class A3_Marathon {
 	
 	public static int secondBestRunner(int[] times) {
 		int best_time_index = bestRunner(times);
-		int second_best_time = times[0];
+		int second_best_time = Integer.MAX_VALUE;
+		int second_best_time_index = -1;
+		
 		if(best_time_index == 0) {
+			if(times.length <= 1) 
+				return -1;
 			second_best_time = times[1];
+			second_best_time_index = 1;
 		}
-		int second_best_time_index = 0;
-		
-		
+			
 		for(int i = 0; i < times.length; i++) {
 			if(i == best_time_index){
 				continue;
@@ -50,8 +53,22 @@ public class A3_Marathon {
 		int best_index = bestRunner(times);
 		int second_best_index = secondBestRunner(times);
 		
-		System.out.println("First Place: " + names[best_index] + ": " + times[best_index]);
-		System.out.println("Second Place: " + names[second_best_index] + ": " + times[second_best_index]);
+		// Best runner found		
+		if(best_index >= 0) { 
+			// No second place
+			if(second_best_index < 0) {
+				System.out.println("First Place: " + names[best_index] + ": " + times[best_index]);
+				System.out.println("There's no second place.");
+			// Tie!
+			}else if( times[best_index] == times[second_best_index]){
+				System.out.println("It's a tie! " + names[best_index] + ": " + times[best_index] + " - " + names[second_best_index] + ": " + times[second_best_index]);
+			}else {
+				System.out.println("First Place: " + names[best_index] + ": " + times[best_index]);
+				System.out.println("Second Place: " + names[second_best_index] + ": " + times[second_best_index]);
+			}
+		}else {
+			System.out.println("There's no runners.");
+		}
 	}
 
 }
