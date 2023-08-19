@@ -1,16 +1,16 @@
-package Introduction_to_Java_Assignments;
+package Assignment_4;
 
-public class A4_Library {
+public class Library {
     // Add the missing implementation to this class
 	String address;
-	A4_Book[] books = new A4_Book[10];
+	Book[] books = new Book[10];
 	int bookCount = 0;
 	
-	A4_Library(String newAddress) {
+	Library(String newAddress) {
 		address = newAddress;
 	}
 	
-	void addBook(A4_Book newBook) {
+	void addBook(Book newBook) {
 		books[bookCount++] = newBook;
 //		System.out.println(bookCount);
 	}
@@ -67,14 +67,14 @@ public class A4_Library {
 
     public static void main(String[] args) {
         // Create two libraries
-    	A4_Library firstLibrary = new A4_Library("10 Main St.");
-        A4_Library secondLibrary = new A4_Library("228 Liberty St.");
+    	Library firstLibrary = new Library("10 Main St.");
+        Library secondLibrary = new Library("228 Liberty St.");
 
         // Add four books to the first library
-        firstLibrary.addBook(new A4_Book("The Da Vinci Code"));
-        firstLibrary.addBook(new A4_Book("Le Petit Prince"));
-        firstLibrary.addBook(new A4_Book("A Tale of Two Cities"));
-        firstLibrary.addBook(new A4_Book("The Lord of the Rings"));
+        firstLibrary.addBook(new Book("The Da Vinci Code"));
+        firstLibrary.addBook(new Book("Le Petit Prince"));
+        firstLibrary.addBook(new Book("A Tale of Two Cities"));
+        firstLibrary.addBook(new Book("The Lord of the Rings"));
 
         // Print opening hours and the addresses
         System.out.println("Library hours:");

@@ -1,6 +1,6 @@
-package Introduction_to_Java_Assignments;
+package Assignment_2;
 
-public class A2_FooCoorporation {
+public class FooCoorporation {
 	public static void printTotalPay(double basePay, int hours) {
 		if(basePay < 8.0) {
 			System.out.println("Base Pay must be at least $8.00/hour");

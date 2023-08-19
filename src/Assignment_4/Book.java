@@ -1,12 +1,12 @@
-package Introduction_to_Java_Assignments;
+package Assignment_4;
 
-public class A4_Book {
+public class Book {
 
     String title;
     boolean borrowed;
 
     // Creates a new Book
-    public A4_Book(String bookTitle) {
+    public Book(String bookTitle) {
         // Implement this method
     	title = bookTitle;
     }
@@ -37,7 +37,7 @@ public class A4_Book {
 
     public static void main(String[] arguments) {
         // Small test of the Book class
-    	A4_Book example = new A4_Book("The Da Vinci Code");
+    	Book example = new Book("The Da Vinci Code");
         System.out.println("Title (should be The Da Vinci Code): " + example.getTitle());
         System.out.println("Borrowed? (should be false): " + example.isBorrowed());
         example.borrowed();

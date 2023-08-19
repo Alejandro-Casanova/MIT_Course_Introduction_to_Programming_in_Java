@@ -1,6 +1,6 @@
-package Introduction_to_Java_Assignments;
+package Assignment_3;
 
-public class A3_Marathon {
+public class Marathon {
 	
 	public static int bestRunner(int[] times) {
 		int best_time = Integer.MAX_VALUE;
